@@ -1,5 +1,11 @@
 package com.revature.controller;
 
-public class LoginController {
+import javax.servlet.http.HttpServletRequest;
+
+public interface LoginController {
 	
+	public Object login(HttpServletRequest request);
+	
+	public Object logout(HttpServletRequest request);
+
 }

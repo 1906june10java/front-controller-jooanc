@@ -22,9 +22,9 @@ public final class ConnectionUtil {
 
 	/* Get connection to JDBC */
 	public static Connection getConnection() throws SQLException {
-		String url = "jdbc:oracle:thin:@bankdbinstance2.cd85qhigqy8i.us-east-2.rds.amazonaws.com:1521:ORCL";
-		String username = "LOGIN_TEST_DB";
-		String password = "p4ssw0rd";
+		String url = "jdbc:oracle:thin:@mydbinstance.cd85qhigqy8i.us-east-2.rds.amazonaws.com:1521:ORCL";
+		String username = "admin";
+		String password = "p4ssw0rd";		
 
 		return DriverManager.getConnection(url, username, password);
 	}

@@ -2,19 +2,24 @@ package com.revature.request;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.revature.controller.CustomerController;
+import com.revature.controller.EmployeeControllerAlpha;
+import com.revature.controller.LoginControllerAlpha;
+
 
 public class RequestHelper {
 	
+	private RequestHelper() {}
+	
 	public static Object  process(HttpServletRequest request) {
 		switch(request.getRequestURI()) {
-		case "/FrontController/getAll.do":
-			return CustomerController.getAllCustomers(request);
-		case "/FrontController/register.do":
-			return CustomerController.register(request);
+		case "/login.do":
+			return LoginControllerAlpha.getInstance().login(request);
+		case "/logout.do":
+			return LoginControllerAlpha.getInstance().logout(request);
+		case "/getAll.do":
+			return EmployeeControllerAlpha.getInstance().getAllEmployees(request);
 		default:
-			//We should return a 404 null here.
-			return "login.html";
+			return "not-implemented.html";
 		}
 	}
 }
